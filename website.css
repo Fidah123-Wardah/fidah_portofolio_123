@@ -1,0 +1,482 @@
+/* Pengaturan Ukuran Foto Home (Bulat) */
+.profile-frame {
+    position: relative;
+    width: 200px;  /* Ubah angka ini untuk memperkecil/memperbesar foto Home */
+    height: 200px; /* Samakan dengan lebar agar tetap bulat sempurna */
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 6px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(216, 129, 156, 0.3);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Pengaturan Ukuran Foto About */
+.about-photo {
+    width: 100%;
+    max-width: 220px; /* Ubah angka ini untuk mengecilkan foto di bagian About */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+/* ==========================================
+   GLOBAL STYLES & VARIABLES (FULL COLOR - NO WHITE AT ALL)
+   ================================---------- */
+:root {
+    --primary-accent: #27ae60;    /* Hijau Sage Utama */
+    --secondary-accent: #2980b9;  /* Biru Elegan */
+    --warm-brown: #8d5b4c;        /* Coklat Hangat */
+    --dark-bg: #1e2229;           /* Hitam Kebiruan Modern */
+    --card-bg: #282c34;           /* Abu-abu Gelap Kartu */
+    
+    /* Background tiap section (Sepenuhnya berwarna, tanpa putih) */
+    --bg-hero: linear-gradient(135deg, #d6e4ed 0%, #d4ede6 100%);     /* Gradasi Biru-Hijau Lembut */
+    --bg-about: #e5ece8;                                              /* Hijau Sage Sangat Soft */
+    --bg-experience: #1e2229;                                         /* Hitam Elegan */
+    --bg-projects: #d9e6f2;                                           /* Biru Pastel */
+    --bg-contact: #16191e;                                            /* Hitam Gelap */
+    
+    /* Warna Pengganti Area Terang/Putih (Krem Sage & Abu-abu Berwarna) */
+    --colored-surface: #eaf0ec;               /* Pengganti card terang */
+    --colored-surface-alt: #e1e9e4;           /* Pengganti background terang alternatif */
+    --colored-border: #bcd0c5;                /* Pengganti border putih */
+    
+    --text-color: #2c3e50;
+    --text-light: #e5edeb;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--colored-surface-alt);
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   NAVBAR
+   ================================---------- */
+.navbar {
+    background-color: rgba(30, 34, 41, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: var(--text-light) !important;
+}
+
+.navbar-brand span {
+    color: var(--primary-accent);
+    margin-left: 3px;
+}
+
+.nav-link {
+    color: #b2bec3 !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-accent) !important;
+}
+
+/* ==========================================
+   HERO SECTION
+   ================================---------- */
+.hero {
+    position: relative;
+    background: var(--bg-hero);
+    padding: 160px 0 120px 0;
+}
+
+.hero-text .intro-label {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--secondary-accent);
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-weight: 800;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--dark-bg);
+}
+
+.hero-text h1 span {
+    color: var(--primary-accent);
+}
+
+.hero-text h3 {
+    font-size: 1.4rem;
+    color: var(--warm-brown);
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.05rem;
+    color: #4a5568;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-buttons .btn {
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-pink {
+    background-color: var(--primary-accent);
+    color: var(--text-light);
+    border: 2px solid var(--primary-accent);
+}
+
+.btn-pink:hover {
+    background-color: #219653;
+    border-color: #219653;
+    color: var(--text-light);
+}
+
+.btn-outline-pink {
+    background-color: transparent;
+    color: var(--secondary-accent);
+    border: 2px solid var(--secondary-accent);
+    margin-left: 10px;
+}
+
+.btn-outline-pink:hover {
+    background-color: var(--secondary-accent);
+    color: var(--text-light);
+}
+
+/* Profile Image Frame */
+.profile-frame {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(45deg, var(--primary-accent), var(--secondary-accent));
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--colored-surface);
+}
+
+.photo-caption {
+    margin-top: 15px;
+    font-style: italic;
+    color: var(--warm-brown);
+    font-size: 0.95rem;
+}
+
+.home-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    fill: var(--bg-about);
+}
+
+/* ==========================================
+   ABOUT SECTION
+   ================================---------- */
+.section-about {
+    padding: 100px 0;
+    background-color: var(--bg-about);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-label {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--primary-accent);
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    font-weight: 800;
+    font-size: 2.3rem;
+    color: var(--dark-bg);
+}
+
+.section-heading h2 span {
+    color: var(--secondary-accent);
+}
+
+.section-heading p {
+    color: #637373;
+    margin-top: 10px;
+}
+
+.about-photo {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.subheading {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-bg);
+}
+
+.info-box {
+    background-color: #dbe4df; /* Warna Sage Gelap Lembut */
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--warm-brown);
+}
+
+.info-box h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--warm-brown);
+}
+
+.info-box p {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    color: #2c3e50;
+}
+
+/* Skills List Tags */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.skills-list span {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.skills-list span:nth-child(1) { background-color: var(--primary-accent); }
+.skills-list span:nth-child(2) { background-color: var(--secondary-accent); }
+.skills-list span:nth-child(3) { background-color: var(--warm-brown); }
+.skills-list span:nth-child(4) { background-color: #34495e; }
+.skills-list span:nth-child(5) { background-color: #16a085; }
+
+/* ==========================================
+   EXPERIENCE SECTION (Dark Theme)
+   ================================---------- */
+.section-dark {
+    background-color: var(--bg-experience);
+    color: var(--text-light);
+    padding: 100px 0;
+}
+
+.section-dark .section-heading h2 {
+    color: var(--text-light);
+}
+
+.section-dark .section-heading p {
+    color: #b2bec3;
+}
+
+.portfolio-card {
+    background-color: var(--colored-surface);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--colored-border);
+}
+
+.section-dark .portfolio-card {
+    background-color: var(--card-bg);
+    border-color: #3a3f4b;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.card-category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--primary-accent);
+    margin-bottom: 8px;
+}
+
+.portfolio-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--dark-bg);
+}
+
+.section-dark .portfolio-card h3 {
+    color: var(--text-light);
+}
+
+.portfolio-card p {
+    font-size: 0.92rem;
+    color: #4a5568;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.section-dark .portfolio-card p {
+    color: #b2bec3;
+}
+
+/* ==========================================
+   PROJECTS SECTION
+   ================================---------- */
+.section-projects {
+    padding: 100px 0;
+    background-color: rgb(103, 119, 174);
+}
+
+.project-card {
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--colored-surface);
+    border: 1px solid var(--colored-border);
+}
+
+.project-image-wrap {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.08);
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-light);
+    background-color: var(--secondary-accent);
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+.project-content h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    color: var(--dark-bg);
+}
+
+.project-content p {
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+/* ==========================================
+   CONTACT SECTION
+   ================================---------- */
+.section-contact {
+    background-color: var(--bg-contact);
+    color: var(--text-light);
+    padding: 100px 0;
+}
+
+.section-contact .section-heading h2 {
+    color: var(--text-light);
+}
+
+.section-contact .section-heading p {
+    color: #b2bec3;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 18px 20px;
+    border-radius: 12px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: background 0.3s ease;
+    border: 1px solid #3a3f4b;
+}
+
+.contact-item:hover {
+    background-color: #323842;
+    color: var(--text-light);
+}
+
+.contact-icon {
+    font-size: 1.4rem;
+    color: var(--primary-accent);
+    margin-right: 15px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.contact-item strong {
+    display: block;
+    font-size: 0.95rem;
+}
+
+.contact-item small {
+    color: #9dd1e7;
+    font-size: 0.85rem;
+}
+
+.contact-form {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #3a3f4b;
+}
